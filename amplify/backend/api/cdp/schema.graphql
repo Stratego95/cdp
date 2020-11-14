@@ -4,3 +4,14 @@ type Note @model {
   description: String
   image: String
 }
+
+type Element @model {
+  id: ID!
+  name: String!
+  description: String
+  image: String
+  value: String
+  apparatus: String
+  group: Int
+  compositionRules: AWSJSON
+}

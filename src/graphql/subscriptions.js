@@ -37,3 +37,51 @@ export const onDeleteNote = /* GraphQL */ `
     }
   }
 `;
+export const onCreateElement = /* GraphQL */ `
+  subscription OnCreateElement {
+    onCreateElement {
+      id
+      name
+      description
+      image
+      value
+      apparatus
+      group
+      compositionRules
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateElement = /* GraphQL */ `
+  subscription OnUpdateElement {
+    onUpdateElement {
+      id
+      name
+      description
+      image
+      value
+      apparatus
+      group
+      compositionRules
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteElement = /* GraphQL */ `
+  subscription OnDeleteElement {
+    onDeleteElement {
+      id
+      name
+      description
+      image
+      value
+      apparatus
+      group
+      compositionRules
+      createdAt
+      updatedAt
+    }
+  }
+`;

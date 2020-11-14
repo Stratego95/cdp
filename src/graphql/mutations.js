@@ -46,3 +46,60 @@ export const deleteNote = /* GraphQL */ `
     }
   }
 `;
+export const createElement = /* GraphQL */ `
+  mutation CreateElement(
+    $input: CreateElementInput!
+    $condition: ModelElementConditionInput
+  ) {
+    createElement(input: $input, condition: $condition) {
+      id
+      name
+      description
+      image
+      value
+      apparatus
+      group
+      compositionRules
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateElement = /* GraphQL */ `
+  mutation UpdateElement(
+    $input: UpdateElementInput!
+    $condition: ModelElementConditionInput
+  ) {
+    updateElement(input: $input, condition: $condition) {
+      id
+      name
+      description
+      image
+      value
+      apparatus
+      group
+      compositionRules
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteElement = /* GraphQL */ `
+  mutation DeleteElement(
+    $input: DeleteElementInput!
+    $condition: ModelElementConditionInput
+  ) {
+    deleteElement(input: $input, condition: $condition) {
+      id
+      name
+      description
+      image
+      value
+      apparatus
+      group
+      compositionRules
+      createdAt
+      updatedAt
+    }
+  }
+`;
