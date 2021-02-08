@@ -1,25 +1,11 @@
-import React, { useState, useEffect } from 'react';
-//import './App.css';
-import APITutorial from './APITutorial';
-import DataInput from './DataInput';
-import Search from './Search';
-import SelectApparatus from './SelectApparatus';
-import ApparatusOverview from './ApparatusOverview';
+import React from 'react';
+import ElementsOverview from './ElementsOverview';
 
-function App() {
-
-
+const App = () => {
   return (
     <div>
-    <ApparatusOverview/>
-
+      <ElementsOverview />
     </div>
-        //<DataInput/>
-
-    //<ApparatusOverview/>
-    //<SelectApparatus/>
-    //<Search/>
-    //<APITutorial/>
   );
 }
 
