@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { API, Storage } from 'aws-amplify';
-import { listElements } from '../graphql/queries';
+import { listElements } from '../../graphql/queries';
 import DataTable from 'react-data-table-component';
 import FilterElements from './FilterElements';
 
@@ -75,7 +75,7 @@ const ElementsOverview = () => {
                 theme="dark"
                 pagination
                 responsive={true}
-            />      
+            />
         </div>
     )
 }
