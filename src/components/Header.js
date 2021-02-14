@@ -15,9 +15,13 @@ const Header = () => {
                 </Link>
                 <Link className={`item ${active === "gymnasts" ? 'active' : null}`} to="/gymnasts" onClick={(e) => setActive("gymnasts")}>
                     Manage Gymnasts
-                </Link>        
+                </Link>
+                <div className="right menu">
+                    <div className="item">
+                        <AmplifySignOut/>
+                    </div>
+                </div>
             </div>
-            <AmplifySignOut/>
         </div>
     )
 }
