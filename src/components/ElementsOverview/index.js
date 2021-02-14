@@ -59,7 +59,7 @@ const ElementsOverview = () => {
       if(selectedDifficulty !== null) data = data.filter(el => el.value === selectedDifficulty);
 
       return(
-        <div>
+        <div className="content-Container">
             <FilterElements
               elements={elements}
               setGroup={setSelectedGroup}
