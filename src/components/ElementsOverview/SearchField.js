@@ -18,7 +18,7 @@ const SearchField = ({ changeDescription }) => {
 };
 
 SearchField.propTypes = {
-  changeDescription: PropTypes.string.isRequired,
+  changeDescription: PropTypes.func.isRequired,
 };
 
 export default SearchField;
