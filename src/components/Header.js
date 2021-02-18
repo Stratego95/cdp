@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { AmplifySignOut } from "@aws-amplify/ui-react";
+import { CurrentUser } from "./App";
 
 const Header = () => {
   const [active, setActive] = useState("home");
+  const currentUser = useContext(CurrentUser);
   return (
     <div>
       <div className="ui secondary pointing menu">
@@ -29,8 +31,9 @@ const Header = () => {
           Manage Gymnasts
         </Link>
         <div className="right menu">
+          <div className="item">{currentUser}</div>
           <div className="item">
-            <AmplifySignOut />
+            {currentUser && active === "gymnasts" && <AmplifySignOut />}
           </div>
         </div>
       </div>
