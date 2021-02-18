@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 import SearchField from "./SearchField";
 import DropdownField from "./DropdownField";
 
@@ -44,6 +44,14 @@ const FilterElements = ({
       </div>
     </form>
   );
+};
+
+FilterElements.propTypes = {
+  elements: PropTypes.array.isRequired,
+  setGroup: PropTypes.func.isRequired,
+  setApparatus: PropTypes.func.isRequired,
+  setDescription: PropTypes.func.isRequired,
+  setDifficulty: PropTypes.func.isRequired,
 };
 
 export default FilterElements;

@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 
 const SearchField = ({ changeDescription }) => {
   return (
@@ -15,6 +15,10 @@ const SearchField = ({ changeDescription }) => {
       <div className="results"></div>
     </div>
   );
+};
+
+SearchField.propTypes = {
+  changeDescription: PropTypes.string.isRequired,
 };
 
 export default SearchField;

@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 
 const ApparatusSelection = ({ apparatus, icon, onClick }) => {
   return (
@@ -13,6 +13,12 @@ const ApparatusSelection = ({ apparatus, icon, onClick }) => {
       </div>
     </div>
   );
+};
+
+ApparatusSelection.propTypes = {
+  apparatus: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default ApparatusSelection;

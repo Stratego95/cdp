@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 import ApparatusSelection from "./ApparatusSelection";
 
 const GymnastsEntry = ({ gym, apparatusClicked, deleteGymnast }) => {
@@ -33,6 +33,12 @@ const GymnastsEntry = ({ gym, apparatusClicked, deleteGymnast }) => {
       </button>
     </div>
   );
+};
+
+GymnastsEntry.propTypes = {
+  gym: PropTypes.object.isRequired,
+  apparatusClicked: PropTypes.func.isRequired,
+  deleteGymnast: PropTypes.func.isRequired,
 };
 
 export default GymnastsEntry;

@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 
 const ApparatusCard = ({ name, image, onClick }) => {
   return (
@@ -11,6 +11,12 @@ const ApparatusCard = ({ name, image, onClick }) => {
       </div>
     </div>
   );
+};
+
+ApparatusCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default ApparatusCard;

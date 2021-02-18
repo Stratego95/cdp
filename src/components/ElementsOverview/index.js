@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { API, Storage } from "aws-amplify";
 import { listElements } from "../../graphql/queries";
 import DataTable from "react-data-table-component";

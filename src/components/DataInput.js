@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { API, Storage } from "aws-amplify";
 import { createElement } from "../graphql/mutations";
 const initialFormState = {

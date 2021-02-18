@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 
 const DropdownField = ({ attribute, data, onChange }) => {
   return (
@@ -19,6 +19,12 @@ const DropdownField = ({ attribute, data, onChange }) => {
       </select>
     </div>
   );
+};
+
+DropdownField.propTypes = {
+  attribute: PropTypes.string.isRequired,
+  data: PropTypes.array,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default DropdownField;
