@@ -17,6 +17,7 @@ export const createElement = /* GraphQL */ `
       compositionRules
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -36,6 +37,7 @@ export const updateElement = /* GraphQL */ `
       compositionRules
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -55,6 +57,7 @@ export const deleteElement = /* GraphQL */ `
       compositionRules
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -67,25 +70,18 @@ export const createTrainer = /* GraphQL */ `
       id
       name
       gymnasts {
-        id
-        name
-        trainer {
+        items {
           id
           name
           createdAt
           updatedAt
+          owner
         }
-        apparatus {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
+        nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -98,25 +94,18 @@ export const updateTrainer = /* GraphQL */ `
       id
       name
       gymnasts {
-        id
-        name
-        trainer {
+        items {
           id
           name
           createdAt
           updatedAt
+          owner
         }
-        apparatus {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
+        nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -129,25 +118,18 @@ export const deleteTrainer = /* GraphQL */ `
       id
       name
       gymnasts {
-        id
-        name
-        trainer {
+        items {
           id
           name
           createdAt
           updatedAt
+          owner
         }
-        apparatus {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
+        nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -163,40 +145,24 @@ export const createGymnast = /* GraphQL */ `
         id
         name
         gymnasts {
-          id
-          name
-          createdAt
-          updatedAt
+          nextToken
         }
         createdAt
         updatedAt
+        owner
       }
       apparatus {
-        id
-        name
-        gymnast {
+        items {
           id
           name
           createdAt
           updatedAt
         }
-        elments {
-          id
-          name
-          description
-          image
-          value
-          apparatus
-          group
-          compositionRules
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
+        nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -212,40 +178,24 @@ export const updateGymnast = /* GraphQL */ `
         id
         name
         gymnasts {
-          id
-          name
-          createdAt
-          updatedAt
+          nextToken
         }
         createdAt
         updatedAt
+        owner
       }
       apparatus {
-        id
-        name
-        gymnast {
+        items {
           id
           name
           createdAt
           updatedAt
         }
-        elments {
-          id
-          name
-          description
-          image
-          value
-          apparatus
-          group
-          compositionRules
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
+        nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -261,40 +211,24 @@ export const deleteGymnast = /* GraphQL */ `
         id
         name
         gymnasts {
-          id
-          name
-          createdAt
-          updatedAt
+          nextToken
         }
         createdAt
         updatedAt
+        owner
       }
       apparatus {
-        id
-        name
-        gymnast {
+        items {
           id
           name
           createdAt
           updatedAt
         }
-        elments {
-          id
-          name
-          description
-          image
-          value
-          apparatus
-          group
-          compositionRules
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
+        nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -314,15 +248,14 @@ export const createGymnastsApparatus = /* GraphQL */ `
           name
           createdAt
           updatedAt
+          owner
         }
         apparatus {
-          id
-          name
-          createdAt
-          updatedAt
+          nextToken
         }
         createdAt
         updatedAt
+        owner
       }
       elments {
         id
@@ -335,6 +268,7 @@ export const createGymnastsApparatus = /* GraphQL */ `
         compositionRules
         createdAt
         updatedAt
+        owner
       }
       createdAt
       updatedAt
@@ -357,15 +291,14 @@ export const updateGymnastsApparatus = /* GraphQL */ `
           name
           createdAt
           updatedAt
+          owner
         }
         apparatus {
-          id
-          name
-          createdAt
-          updatedAt
+          nextToken
         }
         createdAt
         updatedAt
+        owner
       }
       elments {
         id
@@ -378,6 +311,7 @@ export const updateGymnastsApparatus = /* GraphQL */ `
         compositionRules
         createdAt
         updatedAt
+        owner
       }
       createdAt
       updatedAt
@@ -400,15 +334,14 @@ export const deleteGymnastsApparatus = /* GraphQL */ `
           name
           createdAt
           updatedAt
+          owner
         }
         apparatus {
-          id
-          name
-          createdAt
-          updatedAt
+          nextToken
         }
         createdAt
         updatedAt
+        owner
       }
       elments {
         id
@@ -421,6 +354,7 @@ export const deleteGymnastsApparatus = /* GraphQL */ `
         compositionRules
         createdAt
         updatedAt
+        owner
       }
       createdAt
       updatedAt

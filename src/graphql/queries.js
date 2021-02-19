@@ -14,6 +14,7 @@ export const getElement = /* GraphQL */ `
       compositionRules
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -35,6 +36,7 @@ export const listElements = /* GraphQL */ `
         compositionRules
         createdAt
         updatedAt
+        owner
       }
       nextToken
     }
@@ -46,25 +48,18 @@ export const getTrainer = /* GraphQL */ `
       id
       name
       gymnasts {
-        id
-        name
-        trainer {
+        items {
           id
           name
           createdAt
           updatedAt
+          owner
         }
-        apparatus {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
+        nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -79,13 +74,11 @@ export const listTrainers = /* GraphQL */ `
         id
         name
         gymnasts {
-          id
-          name
-          createdAt
-          updatedAt
+          nextToken
         }
         createdAt
         updatedAt
+        owner
       }
       nextToken
     }
@@ -100,40 +93,24 @@ export const getGymnast = /* GraphQL */ `
         id
         name
         gymnasts {
-          id
-          name
-          createdAt
-          updatedAt
+          nextToken
         }
         createdAt
         updatedAt
+        owner
       }
       apparatus {
-        id
-        name
-        gymnast {
+        items {
           id
           name
           createdAt
           updatedAt
         }
-        elments {
-          id
-          name
-          description
-          image
-          value
-          apparatus
-          group
-          compositionRules
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
+        nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -152,15 +129,14 @@ export const listGymnasts = /* GraphQL */ `
           name
           createdAt
           updatedAt
+          owner
         }
         apparatus {
-          id
-          name
-          createdAt
-          updatedAt
+          nextToken
         }
         createdAt
         updatedAt
+        owner
       }
       nextToken
     }
@@ -179,15 +155,14 @@ export const getGymnastsApparatus = /* GraphQL */ `
           name
           createdAt
           updatedAt
+          owner
         }
         apparatus {
-          id
-          name
-          createdAt
-          updatedAt
+          nextToken
         }
         createdAt
         updatedAt
+        owner
       }
       elments {
         id
@@ -200,6 +175,7 @@ export const getGymnastsApparatus = /* GraphQL */ `
         compositionRules
         createdAt
         updatedAt
+        owner
       }
       createdAt
       updatedAt
@@ -225,6 +201,7 @@ export const listGymnastsApparatuss = /* GraphQL */ `
           name
           createdAt
           updatedAt
+          owner
         }
         elments {
           id
@@ -237,6 +214,7 @@ export const listGymnastsApparatuss = /* GraphQL */ `
           compositionRules
           createdAt
           updatedAt
+          owner
         }
         createdAt
         updatedAt

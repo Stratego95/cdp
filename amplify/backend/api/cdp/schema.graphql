@@ -1,4 +1,4 @@
-type Element @model {
+type Element @model @auth(rules: [{allow: owner, queries: null}]) {
   id: ID!
   name: String!
   description: String
@@ -9,22 +9,22 @@ type Element @model {
   compositionRules: AWSJSON
 }
 
-type Trainer @model {
+type Trainer @model @auth(rules: [{allow: owner}]){
   id: ID!
   name: String!
-  gymnasts: [Gymnast]
+  gymnasts: [Gymnast] @connection(name: "TrainersGymnasts")
 }
 
-type Gymnast @model {
+type Gymnast @model @auth(rules: [{allow: owner}]){
   id: ID!
   name: String!
-  trainer: Trainer
-  apparatus: [GymnastsApparatus]
+  trainer: Trainer @connection(name: "TrainersGymnasts")
+  apparatus: [GymnastsApparatus] @connection(name: "GymnastsApparatus")
 }
 
 type GymnastsApparatus @model {
   id: ID!
   name: String!
-  gymnast: Gymnast
+  gymnast: Gymnast @connection(name: "GymnastsApparatus")
   elments: [Element]
 }

@@ -14,6 +14,7 @@ export const onCreateElement = /* GraphQL */ `
       compositionRules
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -30,6 +31,7 @@ export const onUpdateElement = /* GraphQL */ `
       compositionRules
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -46,228 +48,160 @@ export const onDeleteElement = /* GraphQL */ `
       compositionRules
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onCreateTrainer = /* GraphQL */ `
-  subscription OnCreateTrainer {
-    onCreateTrainer {
+  subscription OnCreateTrainer($owner: String!) {
+    onCreateTrainer(owner: $owner) {
       id
       name
       gymnasts {
-        id
-        name
-        trainer {
+        items {
           id
           name
           createdAt
           updatedAt
+          owner
         }
-        apparatus {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
+        nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onUpdateTrainer = /* GraphQL */ `
-  subscription OnUpdateTrainer {
-    onUpdateTrainer {
+  subscription OnUpdateTrainer($owner: String!) {
+    onUpdateTrainer(owner: $owner) {
       id
       name
       gymnasts {
-        id
-        name
-        trainer {
+        items {
           id
           name
           createdAt
           updatedAt
+          owner
         }
-        apparatus {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
+        nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onDeleteTrainer = /* GraphQL */ `
-  subscription OnDeleteTrainer {
-    onDeleteTrainer {
+  subscription OnDeleteTrainer($owner: String!) {
+    onDeleteTrainer(owner: $owner) {
       id
       name
       gymnasts {
-        id
-        name
-        trainer {
+        items {
           id
           name
           createdAt
           updatedAt
+          owner
         }
-        apparatus {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
+        nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onCreateGymnast = /* GraphQL */ `
-  subscription OnCreateGymnast {
-    onCreateGymnast {
+  subscription OnCreateGymnast($owner: String!) {
+    onCreateGymnast(owner: $owner) {
       id
       name
       trainer {
         id
         name
         gymnasts {
-          id
-          name
-          createdAt
-          updatedAt
+          nextToken
         }
         createdAt
         updatedAt
+        owner
       }
       apparatus {
-        id
-        name
-        gymnast {
+        items {
           id
           name
           createdAt
           updatedAt
         }
-        elments {
-          id
-          name
-          description
-          image
-          value
-          apparatus
-          group
-          compositionRules
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
+        nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onUpdateGymnast = /* GraphQL */ `
-  subscription OnUpdateGymnast {
-    onUpdateGymnast {
+  subscription OnUpdateGymnast($owner: String!) {
+    onUpdateGymnast(owner: $owner) {
       id
       name
       trainer {
         id
         name
         gymnasts {
-          id
-          name
-          createdAt
-          updatedAt
+          nextToken
         }
         createdAt
         updatedAt
+        owner
       }
       apparatus {
-        id
-        name
-        gymnast {
+        items {
           id
           name
           createdAt
           updatedAt
         }
-        elments {
-          id
-          name
-          description
-          image
-          value
-          apparatus
-          group
-          compositionRules
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
+        nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
 export const onDeleteGymnast = /* GraphQL */ `
-  subscription OnDeleteGymnast {
-    onDeleteGymnast {
+  subscription OnDeleteGymnast($owner: String!) {
+    onDeleteGymnast(owner: $owner) {
       id
       name
       trainer {
         id
         name
         gymnasts {
-          id
-          name
-          createdAt
-          updatedAt
+          nextToken
         }
         createdAt
         updatedAt
+        owner
       }
       apparatus {
-        id
-        name
-        gymnast {
+        items {
           id
           name
           createdAt
           updatedAt
         }
-        elments {
-          id
-          name
-          description
-          image
-          value
-          apparatus
-          group
-          compositionRules
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
+        nextToken
       }
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -284,15 +218,14 @@ export const onCreateGymnastsApparatus = /* GraphQL */ `
           name
           createdAt
           updatedAt
+          owner
         }
         apparatus {
-          id
-          name
-          createdAt
-          updatedAt
+          nextToken
         }
         createdAt
         updatedAt
+        owner
       }
       elments {
         id
@@ -305,6 +238,7 @@ export const onCreateGymnastsApparatus = /* GraphQL */ `
         compositionRules
         createdAt
         updatedAt
+        owner
       }
       createdAt
       updatedAt
@@ -324,15 +258,14 @@ export const onUpdateGymnastsApparatus = /* GraphQL */ `
           name
           createdAt
           updatedAt
+          owner
         }
         apparatus {
-          id
-          name
-          createdAt
-          updatedAt
+          nextToken
         }
         createdAt
         updatedAt
+        owner
       }
       elments {
         id
@@ -345,6 +278,7 @@ export const onUpdateGymnastsApparatus = /* GraphQL */ `
         compositionRules
         createdAt
         updatedAt
+        owner
       }
       createdAt
       updatedAt
@@ -364,15 +298,14 @@ export const onDeleteGymnastsApparatus = /* GraphQL */ `
           name
           createdAt
           updatedAt
+          owner
         }
         apparatus {
-          id
-          name
-          createdAt
-          updatedAt
+          nextToken
         }
         createdAt
         updatedAt
+        owner
       }
       elments {
         id
@@ -385,6 +318,7 @@ export const onDeleteGymnastsApparatus = /* GraphQL */ `
         compositionRules
         createdAt
         updatedAt
+        owner
       }
       createdAt
       updatedAt
