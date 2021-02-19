@@ -42,6 +42,47 @@ export const listElements = /* GraphQL */ `
     }
   }
 `;
+export const getGymnasticElement = /* GraphQL */ `
+  query GetGymnasticElement($id: ID!) {
+    getGymnasticElement(id: $id) {
+      id
+      identifier
+      description
+      group
+      difficulty
+      apparatus
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const listGymnasticElements = /* GraphQL */ `
+  query ListGymnasticElements(
+    $filter: ModelGymnasticElementFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listGymnasticElements(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        identifier
+        description
+        group
+        difficulty
+        apparatus
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+`;
 export const getTrainer = /* GraphQL */ `
   query GetTrainer($id: ID!) {
     getTrainer(id: $id) {

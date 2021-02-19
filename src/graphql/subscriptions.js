@@ -52,6 +52,51 @@ export const onDeleteElement = /* GraphQL */ `
     }
   }
 `;
+export const onCreateGymnasticElement = /* GraphQL */ `
+  subscription OnCreateGymnasticElement {
+    onCreateGymnasticElement {
+      id
+      identifier
+      description
+      group
+      difficulty
+      apparatus
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const onUpdateGymnasticElement = /* GraphQL */ `
+  subscription OnUpdateGymnasticElement {
+    onUpdateGymnasticElement {
+      id
+      identifier
+      description
+      group
+      difficulty
+      apparatus
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const onDeleteGymnasticElement = /* GraphQL */ `
+  subscription OnDeleteGymnasticElement {
+    onDeleteGymnasticElement {
+      id
+      identifier
+      description
+      group
+      difficulty
+      apparatus
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
 export const onCreateTrainer = /* GraphQL */ `
   subscription OnCreateTrainer($owner: String!) {
     onCreateTrainer(owner: $owner) {

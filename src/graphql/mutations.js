@@ -61,6 +61,60 @@ export const deleteElement = /* GraphQL */ `
     }
   }
 `;
+export const createGymnasticElement = /* GraphQL */ `
+  mutation CreateGymnasticElement(
+    $input: CreateGymnasticElementInput!
+    $condition: ModelGymnasticElementConditionInput
+  ) {
+    createGymnasticElement(input: $input, condition: $condition) {
+      id
+      identifier
+      description
+      group
+      difficulty
+      apparatus
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const updateGymnasticElement = /* GraphQL */ `
+  mutation UpdateGymnasticElement(
+    $input: UpdateGymnasticElementInput!
+    $condition: ModelGymnasticElementConditionInput
+  ) {
+    updateGymnasticElement(input: $input, condition: $condition) {
+      id
+      identifier
+      description
+      group
+      difficulty
+      apparatus
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const deleteGymnasticElement = /* GraphQL */ `
+  mutation DeleteGymnasticElement(
+    $input: DeleteGymnasticElementInput!
+    $condition: ModelGymnasticElementConditionInput
+  ) {
+    deleteGymnasticElement(input: $input, condition: $condition) {
+      id
+      identifier
+      description
+      group
+      difficulty
+      apparatus
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
 export const createTrainer = /* GraphQL */ `
   mutation CreateTrainer(
     $input: CreateTrainerInput!

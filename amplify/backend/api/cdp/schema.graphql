@@ -9,6 +9,15 @@ type Element @model @auth(rules: [{allow: owner, queries: null}]) {
   compositionRules: AWSJSON
 }
 
+type GymnasticElement @model @auth(rules: [{allow: owner, queries: null}]) {
+  id: ID!
+  identifier: String!
+  description: String
+  group: Int
+  difficulty: String
+  apparatus: String
+}
+
 type Trainer @model @auth(rules: [{allow: owner}]){
   id: ID!
   name: String!
