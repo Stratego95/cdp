@@ -8,15 +8,23 @@ const FilterElements = ({
   setApparatus,
   setDescription,
   setDifficulty,
+  setIdentifier,
+  difficulty,
+  identifier,
+  apparatus,
+  description,
+  group,
 }) => {
-  const groups = Array.from(new Set(elements.map((el) => el.group))).sort(
-    (a, b) => a - b
-  );
-  const apparatus = Array.from(
+  const groupsSelection = Array.from(
+    new Set(elements.map((el) => el.group))
+  ).sort((a, b) => a - b);
+
+  const apparatusSelection = Array.from(
     new Set(elements.map((el) => el.apparatus))
   ).sort((a, b) => a.localeCompare(b));
-  const difficulty = Array.from(
-    new Set(elements.map((el) => el.value))
+
+  const difficultySelection = Array.from(
+    new Set(elements.map((el) => el.difficulty))
   ).sort((a, b) => a.localeCompare(b));
 
   return (
@@ -24,22 +32,29 @@ const FilterElements = ({
       <div className="fields">
         <DropdownField
           attribute="Apparatus"
-          data={apparatus}
+          data={apparatusSelection}
           onChange={setApparatus}
+          value={apparatus}
         />
         <DropdownField
           attribute="Group"
-          data={groups}
+          data={groupsSelection}
           onChange={(group) => setGroup(Number(group))}
+          value={group}
         />
         <DropdownField
           attribute="Difficulty"
-          data={difficulty}
+          data={difficultySelection}
           onChange={setDifficulty}
+          value={difficulty}
         />
         <div className="three wide field">
           <label>Search Description</label>
-          <SearchField changeDescription={setDescription} />
+          <SearchField onChange={setDescription} value={description} />
+        </div>
+        <div className="three wide field">
+          <label>Search Identifier</label>
+          <SearchField onChange={setIdentifier} value={identifier} />
         </div>
       </div>
     </form>
@@ -52,6 +67,12 @@ FilterElements.propTypes = {
   setApparatus: PropTypes.func.isRequired,
   setDescription: PropTypes.func.isRequired,
   setDifficulty: PropTypes.func.isRequired,
+  setIdentifier: PropTypes.func.isRequired,
+  difficulty: PropTypes.string.isRequired,
+  identifier: PropTypes.string.isRequired,
+  apparatus: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  group: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 export default FilterElements;

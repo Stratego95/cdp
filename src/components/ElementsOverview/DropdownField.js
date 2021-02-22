@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const DropdownField = ({ attribute, data, onChange }) => {
+const DropdownField = ({ attribute, data, onChange, value }) => {
   return (
     <div className="three wide field">
       <label>Select {attribute}</label>
@@ -8,7 +8,7 @@ const DropdownField = ({ attribute, data, onChange }) => {
         className="ui fluid search dropdown"
         onChange={(e) => onChange(e.target.value)}
       >
-        <option value={null}>Select {attribute}</option>
+        <option value={value}>{value || `Select ${attribute}`}</option>
         {data.map((data, index) => {
           return (
             <option key={index} value={data}>
@@ -25,6 +25,7 @@ DropdownField.propTypes = {
   attribute: PropTypes.string.isRequired,
   data: PropTypes.array,
   onChange: PropTypes.func.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 export default DropdownField;

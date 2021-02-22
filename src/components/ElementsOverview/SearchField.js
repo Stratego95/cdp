@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const SearchField = ({ changeDescription }) => {
+const SearchField = ({ onChange, value }) => {
   return (
     <div className="ui search">
       <div className="ui icon input">
@@ -8,7 +8,8 @@ const SearchField = ({ changeDescription }) => {
           className="prompt"
           type="text"
           placeholder="Search..."
-          onChange={(e) => changeDescription(e.target.value)}
+          onChange={(e) => onChange(e.target.value)}
+          value={value}
         />
         <i className="search icon"></i>
       </div>
@@ -18,7 +19,8 @@ const SearchField = ({ changeDescription }) => {
 };
 
 SearchField.propTypes = {
-  changeDescription: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
 };
 
 export default SearchField;
