@@ -1,14 +1,3 @@
-type Element @model @auth(rules: [{allow: owner, queries: null}]) {
-  id: ID!
-  name: String!
-  description: String
-  image: String
-  value: String
-  apparatus: String
-  group: Int
-  compositionRules: AWSJSON
-}
-
 type GymnasticElement @model @auth(rules: [{allow: owner, queries: null}]) {
   id: ID!
   identifier: String!
@@ -28,12 +17,12 @@ type Gymnast @model @auth(rules: [{allow: owner}]){
   id: ID!
   name: String!
   trainer: Trainer @connection(name: "TrainersGymnasts")
-  apparatus: [GymnastsApparatus] @connection(name: "GymnastsApparatus")
+  apparatus: [Apparatus] @connection(name: "GymnastsApparatus")
 }
 
-type GymnastsApparatus @model {
+type Apparatus @model {
   id: ID!
   name: String!
   gymnast: Gymnast @connection(name: "GymnastsApparatus")
-  elments: [Element]
+  elements: [GymnasticElement]
 }

@@ -1,57 +1,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateElement = /* GraphQL */ `
-  subscription OnCreateElement {
-    onCreateElement {
-      id
-      name
-      description
-      image
-      value
-      apparatus
-      group
-      compositionRules
-      createdAt
-      updatedAt
-      owner
-    }
-  }
-`;
-export const onUpdateElement = /* GraphQL */ `
-  subscription OnUpdateElement {
-    onUpdateElement {
-      id
-      name
-      description
-      image
-      value
-      apparatus
-      group
-      compositionRules
-      createdAt
-      updatedAt
-      owner
-    }
-  }
-`;
-export const onDeleteElement = /* GraphQL */ `
-  subscription OnDeleteElement {
-    onDeleteElement {
-      id
-      name
-      description
-      image
-      value
-      apparatus
-      group
-      compositionRules
-      createdAt
-      updatedAt
-      owner
-    }
-  }
-`;
 export const onCreateGymnasticElement = /* GraphQL */ `
   subscription OnCreateGymnasticElement {
     onCreateGymnasticElement {
@@ -250,9 +199,9 @@ export const onDeleteGymnast = /* GraphQL */ `
     }
   }
 `;
-export const onCreateGymnastsApparatus = /* GraphQL */ `
-  subscription OnCreateGymnastsApparatus {
-    onCreateGymnastsApparatus {
+export const onCreateApparatus = /* GraphQL */ `
+  subscription OnCreateApparatus {
+    onCreateApparatus {
       id
       name
       gymnast {
@@ -272,15 +221,13 @@ export const onCreateGymnastsApparatus = /* GraphQL */ `
         updatedAt
         owner
       }
-      elments {
+      elements {
         id
-        name
+        identifier
         description
-        image
-        value
-        apparatus
         group
-        compositionRules
+        difficulty
+        apparatus
         createdAt
         updatedAt
         owner
@@ -290,9 +237,9 @@ export const onCreateGymnastsApparatus = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateGymnastsApparatus = /* GraphQL */ `
-  subscription OnUpdateGymnastsApparatus {
-    onUpdateGymnastsApparatus {
+export const onUpdateApparatus = /* GraphQL */ `
+  subscription OnUpdateApparatus {
+    onUpdateApparatus {
       id
       name
       gymnast {
@@ -312,15 +259,13 @@ export const onUpdateGymnastsApparatus = /* GraphQL */ `
         updatedAt
         owner
       }
-      elments {
+      elements {
         id
-        name
+        identifier
         description
-        image
-        value
-        apparatus
         group
-        compositionRules
+        difficulty
+        apparatus
         createdAt
         updatedAt
         owner
@@ -330,9 +275,9 @@ export const onUpdateGymnastsApparatus = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteGymnastsApparatus = /* GraphQL */ `
-  subscription OnDeleteGymnastsApparatus {
-    onDeleteGymnastsApparatus {
+export const onDeleteApparatus = /* GraphQL */ `
+  subscription OnDeleteApparatus {
+    onDeleteApparatus {
       id
       name
       gymnast {
@@ -352,15 +297,13 @@ export const onDeleteGymnastsApparatus = /* GraphQL */ `
         updatedAt
         owner
       }
-      elments {
+      elements {
         id
-        name
+        identifier
         description
-        image
-        value
-        apparatus
         group
-        compositionRules
+        difficulty
+        apparatus
         createdAt
         updatedAt
         owner

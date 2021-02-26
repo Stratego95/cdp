@@ -1,66 +1,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createElement = /* GraphQL */ `
-  mutation CreateElement(
-    $input: CreateElementInput!
-    $condition: ModelElementConditionInput
-  ) {
-    createElement(input: $input, condition: $condition) {
-      id
-      name
-      description
-      image
-      value
-      apparatus
-      group
-      compositionRules
-      createdAt
-      updatedAt
-      owner
-    }
-  }
-`;
-export const updateElement = /* GraphQL */ `
-  mutation UpdateElement(
-    $input: UpdateElementInput!
-    $condition: ModelElementConditionInput
-  ) {
-    updateElement(input: $input, condition: $condition) {
-      id
-      name
-      description
-      image
-      value
-      apparatus
-      group
-      compositionRules
-      createdAt
-      updatedAt
-      owner
-    }
-  }
-`;
-export const deleteElement = /* GraphQL */ `
-  mutation DeleteElement(
-    $input: DeleteElementInput!
-    $condition: ModelElementConditionInput
-  ) {
-    deleteElement(input: $input, condition: $condition) {
-      id
-      name
-      description
-      image
-      value
-      apparatus
-      group
-      compositionRules
-      createdAt
-      updatedAt
-      owner
-    }
-  }
-`;
 export const createGymnasticElement = /* GraphQL */ `
   mutation CreateGymnasticElement(
     $input: CreateGymnasticElementInput!
@@ -286,12 +226,12 @@ export const deleteGymnast = /* GraphQL */ `
     }
   }
 `;
-export const createGymnastsApparatus = /* GraphQL */ `
-  mutation CreateGymnastsApparatus(
-    $input: CreateGymnastsApparatusInput!
-    $condition: ModelGymnastsApparatusConditionInput
+export const createApparatus = /* GraphQL */ `
+  mutation CreateApparatus(
+    $input: CreateApparatusInput!
+    $condition: ModelApparatusConditionInput
   ) {
-    createGymnastsApparatus(input: $input, condition: $condition) {
+    createApparatus(input: $input, condition: $condition) {
       id
       name
       gymnast {
@@ -311,15 +251,13 @@ export const createGymnastsApparatus = /* GraphQL */ `
         updatedAt
         owner
       }
-      elments {
+      elements {
         id
-        name
+        identifier
         description
-        image
-        value
-        apparatus
         group
-        compositionRules
+        difficulty
+        apparatus
         createdAt
         updatedAt
         owner
@@ -329,12 +267,12 @@ export const createGymnastsApparatus = /* GraphQL */ `
     }
   }
 `;
-export const updateGymnastsApparatus = /* GraphQL */ `
-  mutation UpdateGymnastsApparatus(
-    $input: UpdateGymnastsApparatusInput!
-    $condition: ModelGymnastsApparatusConditionInput
+export const updateApparatus = /* GraphQL */ `
+  mutation UpdateApparatus(
+    $input: UpdateApparatusInput!
+    $condition: ModelApparatusConditionInput
   ) {
-    updateGymnastsApparatus(input: $input, condition: $condition) {
+    updateApparatus(input: $input, condition: $condition) {
       id
       name
       gymnast {
@@ -354,15 +292,13 @@ export const updateGymnastsApparatus = /* GraphQL */ `
         updatedAt
         owner
       }
-      elments {
+      elements {
         id
-        name
+        identifier
         description
-        image
-        value
-        apparatus
         group
-        compositionRules
+        difficulty
+        apparatus
         createdAt
         updatedAt
         owner
@@ -372,12 +308,12 @@ export const updateGymnastsApparatus = /* GraphQL */ `
     }
   }
 `;
-export const deleteGymnastsApparatus = /* GraphQL */ `
-  mutation DeleteGymnastsApparatus(
-    $input: DeleteGymnastsApparatusInput!
-    $condition: ModelGymnastsApparatusConditionInput
+export const deleteApparatus = /* GraphQL */ `
+  mutation DeleteApparatus(
+    $input: DeleteApparatusInput!
+    $condition: ModelApparatusConditionInput
   ) {
-    deleteGymnastsApparatus(input: $input, condition: $condition) {
+    deleteApparatus(input: $input, condition: $condition) {
       id
       name
       gymnast {
@@ -397,15 +333,13 @@ export const deleteGymnastsApparatus = /* GraphQL */ `
         updatedAt
         owner
       }
-      elments {
+      elements {
         id
-        name
+        identifier
         description
-        image
-        value
-        apparatus
         group
-        compositionRules
+        difficulty
+        apparatus
         createdAt
         updatedAt
         owner

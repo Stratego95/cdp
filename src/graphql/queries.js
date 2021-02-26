@@ -1,47 +1,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getElement = /* GraphQL */ `
-  query GetElement($id: ID!) {
-    getElement(id: $id) {
-      id
-      name
-      description
-      image
-      value
-      apparatus
-      group
-      compositionRules
-      createdAt
-      updatedAt
-      owner
-    }
-  }
-`;
-export const listElements = /* GraphQL */ `
-  query ListElements(
-    $filter: ModelElementFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listElements(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        name
-        description
-        image
-        value
-        apparatus
-        group
-        compositionRules
-        createdAt
-        updatedAt
-        owner
-      }
-      nextToken
-    }
-  }
-`;
 export const getGymnasticElement = /* GraphQL */ `
   query GetGymnasticElement($id: ID!) {
     getGymnasticElement(id: $id) {
@@ -183,9 +142,9 @@ export const listGymnasts = /* GraphQL */ `
     }
   }
 `;
-export const getGymnastsApparatus = /* GraphQL */ `
-  query GetGymnastsApparatus($id: ID!) {
-    getGymnastsApparatus(id: $id) {
+export const getApparatus = /* GraphQL */ `
+  query GetApparatus($id: ID!) {
+    getApparatus(id: $id) {
       id
       name
       gymnast {
@@ -205,15 +164,13 @@ export const getGymnastsApparatus = /* GraphQL */ `
         updatedAt
         owner
       }
-      elments {
+      elements {
         id
-        name
+        identifier
         description
-        image
-        value
-        apparatus
         group
-        compositionRules
+        difficulty
+        apparatus
         createdAt
         updatedAt
         owner
@@ -223,17 +180,13 @@ export const getGymnastsApparatus = /* GraphQL */ `
     }
   }
 `;
-export const listGymnastsApparatuss = /* GraphQL */ `
-  query ListGymnastsApparatuss(
-    $filter: ModelGymnastsApparatusFilterInput
+export const listApparatuss = /* GraphQL */ `
+  query ListApparatuss(
+    $filter: ModelApparatusFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listGymnastsApparatuss(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
+    listApparatuss(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         name
@@ -244,15 +197,13 @@ export const listGymnastsApparatuss = /* GraphQL */ `
           updatedAt
           owner
         }
-        elments {
+        elements {
           id
-          name
+          identifier
           description
-          image
-          value
-          apparatus
           group
-          compositionRules
+          difficulty
+          apparatus
           createdAt
           updatedAt
           owner
