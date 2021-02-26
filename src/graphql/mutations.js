@@ -149,6 +149,7 @@ export const createGymnast = /* GraphQL */ `
         items {
           id
           name
+          elements
           createdAt
           updatedAt
         }
@@ -182,6 +183,7 @@ export const updateGymnast = /* GraphQL */ `
         items {
           id
           name
+          elements
           createdAt
           updatedAt
         }
@@ -215,6 +217,7 @@ export const deleteGymnast = /* GraphQL */ `
         items {
           id
           name
+          elements
           createdAt
           updatedAt
         }
@@ -251,17 +254,7 @@ export const createApparatus = /* GraphQL */ `
         updatedAt
         owner
       }
-      elements {
-        id
-        identifier
-        description
-        group
-        difficulty
-        apparatus
-        createdAt
-        updatedAt
-        owner
-      }
+      elements
       createdAt
       updatedAt
     }
@@ -292,17 +285,7 @@ export const updateApparatus = /* GraphQL */ `
         updatedAt
         owner
       }
-      elements {
-        id
-        identifier
-        description
-        group
-        difficulty
-        apparatus
-        createdAt
-        updatedAt
-        owner
-      }
+      elements
       createdAt
       updatedAt
     }
@@ -333,17 +316,7 @@ export const deleteApparatus = /* GraphQL */ `
         updatedAt
         owner
       }
-      elements {
-        id
-        identifier
-        description
-        group
-        difficulty
-        apparatus
-        createdAt
-        updatedAt
-        owner
-      }
+      elements
       createdAt
       updatedAt
     }

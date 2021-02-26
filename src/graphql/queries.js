@@ -103,6 +103,7 @@ export const getGymnast = /* GraphQL */ `
         items {
           id
           name
+          elements
           createdAt
           updatedAt
         }
@@ -164,17 +165,7 @@ export const getApparatus = /* GraphQL */ `
         updatedAt
         owner
       }
-      elements {
-        id
-        identifier
-        description
-        group
-        difficulty
-        apparatus
-        createdAt
-        updatedAt
-        owner
-      }
+      elements
       createdAt
       updatedAt
     }
@@ -197,17 +188,7 @@ export const listApparatuss = /* GraphQL */ `
           updatedAt
           owner
         }
-        elements {
-          id
-          identifier
-          description
-          group
-          difficulty
-          apparatus
-          createdAt
-          updatedAt
-          owner
-        }
+        elements
         createdAt
         updatedAt
       }

@@ -24,5 +24,5 @@ type Apparatus @model {
   id: ID!
   name: String!
   gymnast: Gymnast @connection(name: "GymnastsApparatus")
-  elements: [GymnasticElement]
+  elements: [String]
 }
