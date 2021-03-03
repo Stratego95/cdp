@@ -1,33 +1,37 @@
 import PropTypes from "prop-types";
+import { useState, useEffect } from "react";
 import ApparatusSelection from "./ApparatusSelection";
+import { listApparatuss } from "./../../graphql/queries";
+import { API, graphqlOperation } from "aws-amplify";
 
-const GymnastsEntry = ({ gym, apparatusClicked, deleteGymnast }) => {
+const GymnastsEntry = ({ gymnast, onApparatusClicked, deleteGymnast }) => {
+  const [apparatusOfGymnast, setApparatusOfGymnast] = useState([]);
+
+  useEffect(() => {
+    API.graphql(graphqlOperation(listApparatuss)).then((data) =>
+      setApparatusOfGymnast(
+        data.data.listApparatuss.items.filter(
+          (item) => item.gymnast.id === gymnast.id
+        )
+      )
+    );
+  }, []);
+
   return (
     <div className="row gymnasts-entry">
-      <h3>{gym.name}</h3>
-      <ApparatusSelection
-        apparatus="Floor"
-        icon="cloud icon"
-        onClick={() => apparatusClicked("floor")}
-      />
-      <ApparatusSelection
-        apparatus="Jump"
-        icon="shop icon"
-        onClick={() => apparatusClicked("jump")}
-      />
-      <ApparatusSelection
-        apparatus="Floor"
-        icon="cloud icon"
-        onClick={() => apparatusClicked("")}
-      />
-      <ApparatusSelection
-        apparatus="Floor"
-        icon="cloud icon"
-        onClick={() => apparatusClicked("")}
-      />
+      <h3 className="gymnast-label">{gymnast.name}</h3>
+      {apparatusOfGymnast.map((apparatus, index) => (
+        <ApparatusSelection
+          key={index}
+          apparatusName={apparatus.name}
+          icon="cloud icon"
+          onClick={() => onApparatusClicked(gymnast, apparatus)}
+        />
+      ))}
+
       <button
         className="ui negative basic button"
-        onClick={() => deleteGymnast(gym.name)}
+        onClick={() => deleteGymnast(gymnast.id)}
       >
         Delete Gymnast
       </button>
@@ -36,8 +40,8 @@ const GymnastsEntry = ({ gym, apparatusClicked, deleteGymnast }) => {
 };
 
 GymnastsEntry.propTypes = {
-  gym: PropTypes.object.isRequired,
-  apparatusClicked: PropTypes.func.isRequired,
+  gymnast: PropTypes.object.isRequired,
+  onApparatusClicked: PropTypes.func.isRequired,
   deleteGymnast: PropTypes.func.isRequired,
 };
 

@@ -1,13 +1,14 @@
 import PropTypes from "prop-types";
 
-const ApparatusSelection = ({ apparatus, icon, onClick }) => {
+const ApparatusSelection = ({ apparatusName, icon, onClick }) => {
   return (
     <div
       className="ui vertical animated button"
       tabIndex="0"
+      style={{ height: "2.7rem" }}
       onClick={() => onClick()}
     >
-      <div className="hidden content">{apparatus}</div>
+      <div className="hidden content">{apparatusName}</div>
       <div className="visible content">
         <i className={icon}></i>
       </div>
@@ -16,7 +17,7 @@ const ApparatusSelection = ({ apparatus, icon, onClick }) => {
 };
 
 ApparatusSelection.propTypes = {
-  apparatus: PropTypes.string.isRequired,
+  apparatusName: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
 };
