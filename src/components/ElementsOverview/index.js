@@ -47,7 +47,7 @@ const ElementsOverview = ({ apparatus, onClick }) => {
     return function cleanup() {
       mounted = false;
     };
-  }, []);
+  }, [apparatus]);
 
   async function fetchGymnasticElements() {
     const apiData = await API.graphql({

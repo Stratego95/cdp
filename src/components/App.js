@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ElementsOverview from "./ElementsOverview";
 import ManageGymnasts from "./ManageGymnasts";
+import GymnastsDetails from "./GymnastsDetails";
 import Header from "./Header";
 import Home from "./Home";
 import { withAuthenticator } from "@aws-amplify/ui-react";
@@ -34,6 +35,11 @@ const App = () => {
       .catch(() => console.log("Not signed in"));
   };
 
+  const onClick = (e) => {
+    // todo
+    console.log(e);
+  };
+
   return (
     <div>
       <CurrentUser.Provider value={user}>
@@ -41,11 +47,20 @@ const App = () => {
           <Header />
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/elements" exact component={ElementsOverview} />
+            <Route
+              path="/elements"
+              exact
+              render={() => <ElementsOverview onClick={onClick} />}
+            />
             <Route
               path="/gymnasts"
               exact
               component={withAuthenticator(ManageGymnasts)}
+            />
+            <Route
+              path="/gymnasts/:user/:apparatus"
+              exact
+              component={GymnastsDetails}
             />
           </Switch>
         </Router>
